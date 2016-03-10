@@ -1,16 +1,23 @@
 /**
- * Define variables here
+ * Override Ionic.scss variables
+ * Refer to available ionic variables here:  /bower_components/ionic/scss/_variables.scss
  */
 
-$textColor: #ccc;
+// For example, you might change some of the default colors:
 
 $light:                           #fff !default;
 $stable:                          #f8f8f8 !default;
-// $positive:                        #387ef5 !default;
-$positive:                        #887ef5 !default;
+$positive:                        #387ef5 !default;
 $calm:                            #11c1f3 !default;
 $balanced:                        #33cd5f !default;
 $energized:                       #ffc900 !default;
 $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
+
+
+/**
+ * Define custom variables here
+ */
+
+$textColor: #ccc;

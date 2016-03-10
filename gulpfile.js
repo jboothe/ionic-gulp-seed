@@ -85,6 +85,7 @@ gulp.task('styles', function() {
       beep();
     });
 
+  // Removed since pulling in ionic.scss in app/styles/main.scss
   // var ionicStream = gulp.src('bower_components/ionic/scss/ionic.scss')
   //   .pipe(cache('styles'))
   //   .pipe(plugins.sass(options))

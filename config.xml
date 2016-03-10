@@ -4,8 +4,8 @@
   <description>
         A blank seed project for rapid development of Ionic projects through gulp workflows
     </description>
-  <author email="tmaximini@gmail.com" href="http://thomasmaximini.com/">
-      Thomas Maximini
+  <author email="jeff.boothe@reurgency.com" href="http://reurgency.com/">
+      Jeff Boothe
     </author>
   <content src="index.html"/>
   <access origin="*"/>
