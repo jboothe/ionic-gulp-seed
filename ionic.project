@@ -1,4 +1,12 @@
 {
   "name": "IonicGulpSeed",
-  "app_id": "de.thomasmaximini.ionicgulpseed"
+  "app_id": "com.reurgency.ionicgulpseed",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
 }

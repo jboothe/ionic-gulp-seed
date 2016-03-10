@@ -1,7 +1,14 @@
 # Ionic Gulp Seed
+## Why This Fork?
+
+* Uses Angular 1.4.8
+* Uses Ionic 1.2.4
+* Easily override ionic.scss
+* Fixed iOS9 remote URL issue
+
+
 ### An ionic starter project with a gulp toolchain
 
-Heads-up: There is now also a [Yeoman Generator](https://github.com/tmaximini/generator-ionic-gulp) available for this seed.
 
 ## Features
 

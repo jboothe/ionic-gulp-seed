@@ -22,7 +22,7 @@ var KarmaServer = require('karma').Server;
 var spawn = require('child_process').spawn;
 var Promise = require('bluebird');
 
-// this is the express server which 
+// this is the express server which
 // will be initiated when gulp serve
 var server = null;
 
@@ -85,17 +85,17 @@ gulp.task('styles', function() {
       beep();
     });
 
+  // var ionicStream = gulp.src('bower_components/ionic/scss/ionic.scss')
+  //   .pipe(cache('styles'))
+  //   .pipe(plugins.sass(options))
+  //   .pipe(plugins.remember('styles'))
+  //   .on('error', function(err) {
+  //       console.log('err: ', err);
+  //       beep();
+  //     });
 
-  var ionicStream = gulp.src('bower_components/ionic/scss/ionic.scss')
-    .pipe(cache('styles'))
-    .pipe(plugins.sass(options))
-    .pipe(plugins.remember('styles'))
-    .on('error', function(err) {
-        console.log('err: ', err);
-        beep();
-      });
-
-  return streamqueue({ objectMode: true }, ionicStream, sassStream)
+  //return streamqueue({ objectMode: true }, ionicStream, sassStream)
+  return streamqueue({ objectMode: true }, sassStream)
     .pipe(plugins.autoprefixer('last 1 Chrome version', 'last 3 iOS versions', 'last 3 Android versions'))
     .pipe(plugins.concat('main.css'))
     .pipe(plugins.if(build, plugins.stripCssComments()))
@@ -265,7 +265,7 @@ gulp.task('serve', function() {
 
 // ionic emulate wrapper
 gulp.task('ionic:emulate', plugins.shell.task([
-  'ionic emulate ' + emulate + ' --livereload --consolelogs'
+  'ionic emulate ' + emulate + ' --livereload --consolelogs --serverlogs'
 ]));
 
 // ionic run wrapper
@@ -347,7 +347,7 @@ gulp.task('test-e2e', ['default'], function(){
   return new Promise(function(resolve, reject){
     /**
      * Steps:
-     * 1. webdriver-manager update: to make sure the standalone 
+     * 1. webdriver-manager update: to make sure the standalone
      *      selenium driver is downloaded to be used
      * 2. webdriver-manager start: to start selenium driver
      * 3. run protractor test cases
@@ -356,10 +356,10 @@ gulp.task('test-e2e', ['default'], function(){
 
     var webdriverUpdate = spawn('node', [webdriverBinary, 'update'], {stdio: 'inherit'})
       .once('close', function(){
-        var webdriverProcess = spawn('node', 
-                        [webdriverBinary, 'start'], 
+        var webdriverProcess = spawn('node',
+                        [webdriverBinary, 'start'],
                         {stdio: 'inherit'});
-     
+
         setTimeout(function(){
 
           var stream = gulp.src('test/e2e/**/*.spec.js').
